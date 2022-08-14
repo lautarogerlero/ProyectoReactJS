@@ -1,0 +1,30 @@
+.navbar {
+    background-color: #3259d3;
+}
+
+.navbar-text, .navbar-logo {
+    color: #ce1818;
+    font-size: 0.8em;
+}
+
+.navbar-text:hover, .navbar-logo:hover {
+    color: #ce1818;
+    border-bottom: 2px solid #ce1818;
+}
+
+.navbar-text:focus {
+    color: #ce1818;
+    border-bottom: 2px solid #ce1818;
+}
+
+@media only screen and (min-width: 992px) {
+    .navbar {
+        height: 10vh;
+    }
+    .navbar-center {
+        width: 80%;
+    }
+    .navbar-text {
+        margin-left: 3em;
+    }
+}
