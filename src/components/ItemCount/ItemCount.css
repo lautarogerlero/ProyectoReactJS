@@ -1,0 +1,38 @@
+.contador {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ccc;
+    gap: 1em;
+    width: 30%;
+    padding: 1em;
+}
+
+.botonesContador {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    align-items: center;
+}
+
+.botonesContador p {
+    margin-top: 10px;
+}
+
+.botonContador {
+    width: 2em;
+    border-radius: 20px;
+    border: 2px solid #3259d3;
+    background-color: white;
+}
+
+.botonAgregar {
+    border-radius: 20px;
+    border: 2px solid #3259d3;
+    background-color: white;
+    padding: 5px 8px;
+}
+
+.botonContador:hover, .botonAgregar:hover {
+    background-color: #3259d3;
+}
