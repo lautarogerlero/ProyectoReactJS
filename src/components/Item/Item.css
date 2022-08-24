@@ -1,0 +1,15 @@
+.item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    width: 300px;
+    border: 1px solid blue;
+    border-radius: 10px;
+}
+
+.itemImg {
+    width: 200px;
+    height: 200px;
+}

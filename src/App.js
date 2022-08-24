@@ -7,8 +7,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <NavBar></NavBar>
-        <ItemListContainer greeting="Este es el contenedor de productos"></ItemListContainer>
+        <NavBar/>
+        <ItemListContainer greeting="Este es el contenedor de productos"/>
         
       </header>
 

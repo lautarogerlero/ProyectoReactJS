@@ -18,7 +18,7 @@ function NavBar() {
             <Nav.Link href="#accesorios" className="navbar-text">Accesorios</Nav.Link>
           </Nav>
           <Nav>
-            <CartWidget numeroCarrito={1}></CartWidget>
+            <CartWidget numeroCarrito={1}/>
           </Nav>
         </Navbar.Collapse>
       </Container>
