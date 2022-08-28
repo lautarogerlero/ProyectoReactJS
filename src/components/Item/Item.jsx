@@ -1,12 +1,13 @@
 import React from "react";
 import "./Item.css"
 
-export const Item = (producto) => {
+export const Item = ({producto}) => {
 
+    const {title, image} = producto
     return (
-        <div className="item">
-            <img src={producto.producto.image} alt={producto.producto.title} className="itemImg"/>
-            <p>{producto.producto.title}</p>
+        <div className="item" key={title}>
+            <img src={image} alt={title} className="itemImg"/>
+            <p>{title}</p>
             <button>Ver info</button>
         </div>
     )

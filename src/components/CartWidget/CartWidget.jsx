@@ -1,7 +1,8 @@
 import "./CartWidget.css";
 import carrito from "../../assets/carrito2.png"
+import React from "react";
 
-function CartWidget({numeroCarrito}) {
+export const CartWidget = ({numeroCarrito}) => {
     return (
         <div className="containerCarrito">
             <img src={carrito} alt="Carrito de Compras"/>
@@ -9,5 +10,3 @@ function CartWidget({numeroCarrito}) {
         </div>
     )
 }
-
-export default CartWidget;

@@ -1,0 +1,25 @@
+.itemDetail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ccc;
+    gap: 3em;
+    width: 100%;
+    height: 100%;
+}
+
+.itemDetail img {
+    height: 100%;
+    width: auto;
+}
+
+.itemDetailDescription {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h3, p, h4 {
+    color: black;
+}

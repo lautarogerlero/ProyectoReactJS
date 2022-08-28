@@ -1,23 +1,39 @@
+import camisetaTitular from "../assets/camisetaTitular.jpg";
+import buzo1 from "../assets/buzo1.jpg";
+import pantalon1 from "../assets/pantalon1.jpg";
+
+
 const listaProductos = [
     {
         id: 1,
-        description: "Remeras",
-        title: "Remera Negra",
-        price: 3500,
-        image: "img/remera-negra.jpg"
+        category: "Camisetas",
+        title: "Camiseta Titular 2022",
+        price: 8000,
+        image: camisetaTitular,
+        description: "Camiseta azul y roja modelo 2022"
     },
     {
         id: 2,
-        description: "Buzos",
-        title: "Buzo Blanco",
-        price: 8100,
-        image: "img/buzo-blanco.jpg"
+        category: "Buzos",
+        title: "Buzo Nike 2022",
+        price: 9500,
+        image: buzo1,
+        description: "Buzo azul con detalles rojos modelo 2022"
     },
     {
         id: 3,
-        description: "Buzos",
-        title: "Buzo Negro",
-        price: 8100,
-        image: "img/buzo.jpg"
+        category: "Pantalones",
+        title: "Pantalón deportivo 2022",
+        price: 8900,
+        image: pantalon1,
+        description: "Pantalón deportivo azul con detalles rojos modelo 2022"
     }
 ]
+
+export const obtenerProductos = () => {
+    return new Promise ((resolve, reject) => {
+        setTimeout(() => {
+            resolve(listaProductos)
+        }, 2000);
+    })
+}

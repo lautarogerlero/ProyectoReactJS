@@ -2,9 +2,10 @@ import "./NavBar.css";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import CartWidget from "../CartWidget/CartWidget";
+import { CartWidget } from "../CartWidget/CartWidget";
+import React from "react";
 
-function NavBar() {
+export const NavBar = () => {
   return (
     <Navbar expand="lg" fixed="top" className="navbar">
       <Container className="navbar-container">
@@ -26,4 +27,3 @@ function NavBar() {
   );
 }
 
-export default NavBar;
