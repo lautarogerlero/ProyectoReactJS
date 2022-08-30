@@ -1,39 +1,28 @@
 import "./ItemDetailContainer.css";
 import React, { useEffect, useState } from "react";
-import { listaProductos } from "../../data/productos";
+import { obtenerProducto } from "../../data/productos";
 import { ItemDetail } from "../ItemDetail/ItemDetail";
 
 
 export const ItemDetailContainer = () => {
 
-    const [productos, setProductos] = useState([]);
-
-    const obtenerProductos = () => {
-        return new Promise ((resolve, reject) => {
-            setTimeout(() => {
-                resolve(listaProductos)
-            }, 2000);
-        })
-    }
+    const [producto, setProducto] = useState([]);
 
     useEffect(() => {
-        console.log("Executing useEffect")
         const obtenerProductosAsync = async() => {
             try {
-                const listado = await obtenerProductos();
-                setProductos(listado);
-                console.log(listado)
+                const productoTraido = await obtenerProducto(1);
+                setProducto(productoTraido);
             } catch (error) {
                 console.log("Error al obtener los productos");
             }
         }
         obtenerProductosAsync();
-        console.log(productos)
     }, [])
 
     return (
         <div className="itemDetailContainer">
-            {/* <ItemDetail item={productos[0]}/>    */}
+            <ItemDetail item={producto}/> 
         </div>
     )
 

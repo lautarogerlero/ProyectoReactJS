@@ -3,7 +3,7 @@ import buzo1 from "../assets/buzo1.jpg";
 import pantalon1 from "../assets/pantalon1.jpg";
 
 
-export const listaProductos = [
+const listaProductos = [
     {
         id: 1,
         category: "Camisetas",
@@ -29,5 +29,22 @@ export const listaProductos = [
         description: "Pantalón deportivo azul con detalles rojos modelo 2022"
     }
 ]
+
+export const obtenerProductos = () => {
+    return new Promise ((resolve, reject) => {
+        setTimeout(() => {
+            resolve(listaProductos)
+        }, 2000);
+    })
+}
+
+export const obtenerProducto = (id) => {
+    return new Promise ((resolve, reject) => {
+        setTimeout(() => {
+            let producto = listaProductos.filter(producto => producto.id === id)
+            resolve(producto[0])
+        }, 2000);
+    })
+}
 
 
