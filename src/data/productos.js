@@ -3,7 +3,7 @@ import buzo1 from "../assets/buzo1.jpg";
 import pantalon1 from "../assets/pantalon1.jpg";
 
 
-const listaProductos = [
+export const listaProductos = [
     {
         id: 1,
         category: "Camisetas",
@@ -30,10 +30,4 @@ const listaProductos = [
     }
 ]
 
-export const obtenerProductos = () => {
-    return new Promise ((resolve, reject) => {
-        setTimeout(() => {
-            resolve(listaProductos)
-        }, 2000);
-    })
-}
+
