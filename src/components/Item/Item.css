@@ -1,15 +1,31 @@
 .item {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    height: 400px;
-    width: 300px;
-    border: 1px solid blue;
-    border-radius: 10px;
+    height: 500px;
+    width: 280px;
 }
 
 .itemImg {
-    width: 200px;
-    height: 200px;
+    width: 98%;
+    height: 60%;
+    margin-bottom: 10px;
+}
+
+.item h4 {
+    font-size: 20px;
+}
+
+.verInfo {
+    padding: 10px 15px;
+    border-radius: 20px;
+    background-color: #3259d3;
+    border: 1px solid #3259d3;
+    color: white;
+}
+
+.verInfo:hover {
+    border: 1px solid #0d3bc7;
+    background-color: #0d3bc7;
 }

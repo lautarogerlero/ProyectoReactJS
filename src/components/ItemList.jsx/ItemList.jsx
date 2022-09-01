@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Item } from "../Item/Item";
-import "./ItemList.css"
+import "./ItemList.css";
 
 
 
@@ -11,7 +11,7 @@ export const ItemList = ({productos}) => {
             {
                 productos.map((producto) => {
                     return (
-                        <Item key={producto.title} producto={producto}/>
+                        <Item key={producto.id} producto={producto}/>
                     )
                 })
             }

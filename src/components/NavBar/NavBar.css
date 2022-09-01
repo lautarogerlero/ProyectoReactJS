@@ -2,11 +2,15 @@
     background-color: #3259d3;
 }
 
-.navbar-text, .navbar-logo {
-    color: #ce1818;
+.navbar-container {
+    text-align: start;
 }
 
-.navbar-text:hover, .navbar-logo:hover {
+.navbar-text {
+    text-decoration: none;
+}
+
+.navbar-text:hover {
     color: #ce1818;
     border-bottom: 2px solid #ce1818;
 }
@@ -21,9 +25,9 @@
         height: 10vh;
     }
     .navbar-center {
-        width: 80%;
+        width: 85%;
     }
-    .navbar-text {
+    .navbar-center .navbar-text {
         margin-left: 3em;
     }
 }

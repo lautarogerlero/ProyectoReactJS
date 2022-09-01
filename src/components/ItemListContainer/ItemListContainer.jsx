@@ -1,15 +1,13 @@
 import "./ItemListContainer.css";
-import { ItemCount } from '../ItemCount/ItemCount';
 import React, { useEffect, useState } from "react";
 import { ItemList } from "../ItemList.jsx/ItemList";
 import { obtenerProductos } from "../../data/productos";
+import { useParams } from "react-router-dom";
 
 
 export const ItemListContainer = ({greeting}) => {
 
-    const agregarProducto = (contador) => {
-    console.log(`Agregado/s ${contador} producto/s`)
-    }
+    const {tipoProducto} = useParams();
 
     const [productos, setProductos] = useState([]);
 
@@ -17,13 +15,20 @@ export const ItemListContainer = ({greeting}) => {
         const obtenerProductosAsync = async() => {
             try {
                 const listado = await obtenerProductos();
-                setProductos(listado);
+                if (!tipoProducto){
+                    setProductos(listado)
+                }
+                else {
+                    const nuevaLista = listado.filter(producto => producto.category === tipoProducto)
+                    setProductos(nuevaLista);
+                }
+                
             } catch (error) {
                 console.log("Error al obtener los productos");
             }
         }
         obtenerProductosAsync();
-    }, [])
+    }, [tipoProducto])
 
 
 
@@ -31,7 +36,6 @@ export const ItemListContainer = ({greeting}) => {
     return(
         <div className="itemContainer">
             <h2>{greeting}</h2>
-            <ItemCount stock={8} initial={0} onAdd={agregarProducto}></ItemCount>
             <ItemList productos={productos}/>
         </div>
         
