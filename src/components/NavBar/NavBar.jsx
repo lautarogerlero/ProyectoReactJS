@@ -20,7 +20,9 @@ export const NavBar = () => {
             <Link to="/productos/accesorios" className="navbar-text">Accesorios</Link>
           </Nav>
           <Nav>
-            <CartWidget numeroCarrito={1}/>
+            <Link to="/cart">
+              <CartWidget numeroCarrito={1}/>
+            </Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

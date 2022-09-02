@@ -26,13 +26,13 @@
     background-color: white;
 }
 
-.botonAgregar {
+.botonAgregar, .terminarCompra {
     border-radius: 20px;
     border: 2px solid #3259d3;
     background-color: white;
     padding: 5px 8px;
 }
 
-.botonContador:hover, .botonAgregar:hover {
+.botonContador:hover, .botonAgregar:hover, .terminarCompra:hover {
     background-color: #3259d3;
 }
