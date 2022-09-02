@@ -9,7 +9,7 @@ Proyecto creado para el curso de React JS de CoderHouse.
 Una página de inicio que muestra todos los productos, una barra de navegación para poder filtrar los productos por categoría y, en cada item, un boton para ver más información del producto seleccionado y mostrar el contador para añadir el producto al carrito.
 
 ## Vista Previa
-![Vista de la navegabilidad](src/assets/navegabilidadReact.gif)
+![Vista de la navegabilidad](src/assets/navegabilidad.gif)
 
 ## Librerias utilizadas
 
