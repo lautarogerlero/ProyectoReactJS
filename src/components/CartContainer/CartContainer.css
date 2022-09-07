@@ -1,0 +1,51 @@
+.carrito {
+    width: 100%;
+    margin-top: 3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    min-height: 85vh;
+}
+
+.tituloCarrito {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    color: black;
+}
+
+.vaciarCarrito {
+    padding: 8px 18px;
+    border-radius: 15px;
+}
+
+.vaciarCarrito:hover {
+    background-color: #3259d3;
+}
+
+.productoCarrito {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1em 0;
+    height: 30vh;
+    width: 55%;
+}
+
+.imagenCarrito {
+    height: 100%;
+    width: 25%;
+} 
+
+.botonRemover {
+    padding: 8px 18px;
+    background-color: #3259d3;
+    border: none;
+    border-radius: 25px;
+}
+
+.botonRemover:hover {
+    background-color: #ce1818;
+}

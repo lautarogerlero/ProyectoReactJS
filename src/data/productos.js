@@ -14,7 +14,7 @@ import camisetaRetro from "../assets/camisetaRetro1.jpg";
 
 
 
-const listaProductos = [
+export const listaProductos = [
     {
         id: 1, category: "camisetas", title: "Camiseta Titular 2022", price: 8000, image: camisetaTitular, description: "Camiseta azul y roja modelo 2022"
     },

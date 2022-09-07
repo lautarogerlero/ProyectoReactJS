@@ -1,14 +1,17 @@
 import "./ItemDetail.css";
 import { ItemCount } from '../ItemCount/ItemCount';
 import { useState } from "react";
-
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 
 export const ItemDetail = ({item}) => {
 
-    const [value, setValue] = useState(0);
+    const {addProduct} = useContext(CartContext);
+
     const agregarProducto = (contador) => {
-        console.log(`Agregado/s ${contador} producto/s`)
-        setValue(contador)
+        const nuevoProducto = {...item, quantity: contador}; // Para agregarle un atributo al item
+        console.log(typeof(contador));
+        addProduct(nuevoProducto, contador)
         }
 
     const {title, image, description, price} = item;

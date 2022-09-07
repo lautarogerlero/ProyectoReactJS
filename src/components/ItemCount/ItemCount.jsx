@@ -28,8 +28,8 @@ export const ItemCount = ({stock, initial, onAdd}) => {
             <button className="botonAgregar" onClick={() => (onAdd(contador))} disabled={contador === 0 ? true : false}>Agregar al Carrito</button>
             {
                 contador > 0 ?
-                <Link to="/cart">
-                    <button className="terminarCompra">Finalizar compra</button>
+                <Link to="/carrito">
+                    <button className="terminarCompra">Ir al Carrito</button>
                 </Link>
                 : 
                 null
