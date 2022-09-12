@@ -1,11 +1,12 @@
-.carrito {
+.carrito, .carritoVacio {
+    min-height: 85vh;
+    height: auto;
     width: 100%;
     margin-top: 3em;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: start;
-    min-height: 85vh;
 }
 
 .tituloCarrito {
@@ -16,12 +17,12 @@
     color: black;
 }
 
-.vaciarCarrito {
+.vaciarCarrito, .botonCarritoVacio {
     padding: 8px 18px;
     border-radius: 15px;
 }
 
-.vaciarCarrito:hover {
+.vaciarCarrito:hover, .botonCarritoVacio:hover {
     background-color: #3259d3;
 }
 
@@ -49,3 +50,4 @@
 .botonRemover:hover {
     background-color: #ce1818;
 }
+
