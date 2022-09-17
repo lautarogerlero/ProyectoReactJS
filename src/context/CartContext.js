@@ -15,9 +15,11 @@ export const CartProvider = ({children}) => {
         const pertenece = isInCart(product.id);
         if (pertenece) {
             const index = listaCarrito.findIndex((item => item.id === product.id));
+            const nuevaLista = [...listaCarrito];
             const cantidadActual = listaCarrito[index].quantity;
-            listaCarrito[index].quantity = cantidadActual + contador;    
-            listaCarrito[index].totalPrice = (cantidadActual + contador) * listaCarrito[index].price;      
+            nuevaLista[index].quantity = cantidadActual + contador;    
+            nuevaLista[index].totalPrice = (cantidadActual + contador) * listaCarrito[index].price; 
+            setListaCarrito(nuevaLista);     
         }
         else {
             
@@ -42,8 +44,13 @@ export const CartProvider = ({children}) => {
         return total;
     }
 
+    const getPrecioTotal = () => {
+        const precioTotal = listaCarrito.reduce((acc, item) => acc + item.totalPrice, 0);
+        return precioTotal;
+    }
+
     return (
-        <CartContext.Provider value={{listaCarrito, addProduct, removeProduct, clear, getTotalProductos}}>
+        <CartContext.Provider value={{listaCarrito, addProduct, removeProduct, clear, getTotalProductos, getPrecioTotal}}>
             {children}
         </CartContext.Provider>
     )

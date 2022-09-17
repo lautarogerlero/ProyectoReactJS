@@ -1,9 +1,9 @@
 import "./ItemListContainer.css";
 import React, { useEffect, useState } from "react";
 import { ItemList } from "../ItemList.jsx/ItemList";
-import { obtenerProductos } from "../../data/productos";
 import { useParams } from "react-router-dom";
-
+import { collection, getDocs, query, where } from "firebase/firestore"
+import { db } from "../../utils/firebase";
 
 export const ItemListContainer = ({greeting}) => {
 
@@ -12,25 +12,25 @@ export const ItemListContainer = ({greeting}) => {
     const [productos, setProductos] = useState([]);
 
     useEffect(() => {
-        const obtenerProductosAsync = async() => {
+        const obtenerProductos = async() => {
             try {
-                const listado = await obtenerProductos();
-                if (!tipoProducto){
-                    setProductos(listado)
-                }
-                else {
-                    const nuevaLista = listado.filter(producto => producto.category === tipoProducto)
-                    setProductos(nuevaLista);
-                }
-                
-            } catch (error) {
+                let queryRef = !tipoProducto ? collection(db, "items") : query(collection(db, "items"), where("category","==",tipoProducto));
+                const response = await getDocs(queryRef);
+                const datos = response.docs.map(doc => {
+                    const newDoc = {
+                        ...doc.data(),
+                        id: doc.id
+                    }
+                    return newDoc;
+                });
+                setProductos(datos);                                        
+            } 
+            catch (error) {
                 console.log("Error al obtener los productos");
             }
         }
-        obtenerProductosAsync();
+        obtenerProductos();
     }, [tipoProducto])
-
-
 
 
     return(

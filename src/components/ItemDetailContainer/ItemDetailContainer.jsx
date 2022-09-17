@@ -1,8 +1,9 @@
 import "./ItemDetailContainer.css";
 import React, { useEffect, useState } from "react";
-import { obtenerProducto } from "../../data/productos";
 import { ItemDetail } from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../../utils/firebase";
 
 
 export const ItemDetailContainer = () => {
@@ -12,16 +13,15 @@ export const ItemDetailContainer = () => {
     const [producto, setProducto] = useState([]);
 
     useEffect(() => {
-        const obtenerProductosAsync = async() => {
-            try {
-                const productoTraido = await obtenerProducto(id);
-                setProducto(productoTraido);
-            } catch (error) {
-                console.log("Error al obtener los productos");
+        const queryRef = doc(db, "items", id);
+        getDoc(queryRef).then(response=>{
+            const newDoc = {
+                ...response.data(),
+                id: response.id
             }
-        }
-        obtenerProductosAsync();
-    }, [])
+            setProducto(newDoc)
+        }).catch(error => console.log(error))
+    }, [id])
 
     return (
         <div className="itemDetailContainer">
