@@ -8,7 +8,7 @@ export const ItemDetail = ({item}) => {
     const {addProduct} = useContext(CartContext);
 
     const agregarProducto = (contador) => {
-        const nuevoProducto = {...item, quantity: contador, totalPrice: contador * item.price}; // Para agregarle un atributo al item
+        const nuevoProducto = {...item, quantity: contador, totalPrice: contador * item.price}; 
         addProduct(nuevoProducto, contador)
         }
 

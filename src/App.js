@@ -16,12 +16,11 @@ function App() {
           <header className="App-header">
             <NavBar/>
             <Routes>
-              <Route path="/" element={<ItemListContainer greeting="Este es el contenedor de productos"/>}/>
-              {/* <Route path="/productos" element={<ItemListContainer greeting="Este es el contenedor de productos"/>}/> */}
-              <Route path="/productos/:tipoProducto" element={<ItemListContainer greeting="Este es el contenedor de productos"/>}/>
+              <Route path="/" element={<ItemListContainer greeting="Estos son nuestros productos"/>}/>
+              <Route path="/productos/:tipoProducto" element={<ItemListContainer greeting="Estos son nuestros productos"/>}/>
               <Route path="/item/:id" element={<ItemDetailContainer/>}/>
               <Route path="/carrito" element={<CartContainer/>}/>
-              <Route path="*" element={<ItemListContainer greeting="Este es el contenedor de productos"/>}/>
+              <Route path="*" element={<ItemListContainer greeting="Estos son nuestros productos"/>}/>
             </Routes>
           </header>
         </div>
